@@ -9,6 +9,12 @@ document.getElementById("ordersContainer");
 const emptyOrders =
 document.getElementById("emptyOrders");
 
+const notificationSound =
+document.getElementById("notificationSound");
+
+let previousOrderCount = 0;
+let firstLoad = true;
+
 /* =========================
    LOAD ORDERS
 ========================= */
@@ -24,7 +30,27 @@ fb.orderBy("createdAt","desc")
 );
 
 fb.onSnapshot(q,(snapshot)=>{
+const currentOrderCount = snapshot.size;
 
+if(!firstLoad && currentOrderCount > previousOrderCount){
+
+notificationSound.currentTime = 0;
+
+notificationSound.play().catch(()=>{});
+
+if(navigator.vibrate){
+
+navigator.vibrate([300,200,300]);
+
+}
+
+alert("🔔 New Order Received");
+
+}
+
+previousOrderCount = currentOrderCount;
+
+firstLoad = false;
 ordersContainer.innerHTML="";
 
 if(snapshot.empty){
