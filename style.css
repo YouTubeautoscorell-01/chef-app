@@ -1,0 +1,361 @@
+/* ===========================================
+   CHEF STYLE.CSS
+=========================================== */
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Montserrat',sans-serif;
+
+background:#3B0A16;
+
+color:#fff;
+
+padding:100px 15px 30px;
+
+background-image:
+linear-gradient(
+45deg,
+rgba(212,178,111,.05)25%,
+transparent 25%,
+transparent 75%,
+rgba(212,178,111,.05)75%
+),
+linear-gradient(
+-45deg,
+rgba(212,178,111,.05)25%,
+transparent 25%,
+transparent 75%,
+rgba(212,178,111,.05)75%
+);
+
+background-size:80px 80px;
+background-position:0 0,40px 40px;
+
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#4D1524;
+
+border-bottom:1px solid #D4AF37;
+
+z-index:999;
+
+}
+
+.navbar h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:32px;
+
+color:#E8D7B0;
+
+}
+
+/* =========================
+   LIVE BOX
+========================= */
+
+.live-box{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-size:15px;
+
+color:#E8D7B0;
+
+}
+
+.live-dot{
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+background:#00FF66;
+
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.3;
+
+}
+
+}
+
+/* =========================
+   ORDER GRID
+========================= */
+
+.orders-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:20px;
+
+}
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.order-card{
+
+background:#5A1626;
+
+border:1px solid #D4AF37;
+
+border-radius:18px;
+
+padding:22px;
+
+box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+.order-card h2{
+
+font-size:20px;
+
+color:#E8D7B0;
+
+margin-bottom:15px;
+
+font-family:'Cormorant Garamond',serif;
+
+}
+
+.order-card h3{
+
+font-size:17px;
+
+margin-bottom:12px;
+
+color:#fff;
+
+}
+
+.order-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+margin-bottom:6px;
+
+}
+
+/* =========================
+   TOTAL
+========================= */
+
+.total{
+
+margin-top:15px;
+
+padding-top:15px;
+
+border-top:1px solid rgba(255,255,255,.15);
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#FFD76A;
+
+}
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.button-group{
+
+display:flex;
+
+gap:10px;
+
+margin-top:20px;
+
+}
+
+/* CALL */
+
+.call-btn{
+
+flex:1;
+
+padding:13px;
+
+background:#1565C0;
+
+color:#fff;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.call-btn:hover{
+
+background:#0D47A1;
+
+}
+
+/* DELETE */
+
+.delete-btn{
+
+flex:1;
+
+padding:13px;
+
+background:#C62828;
+
+color:#fff;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+background:#8E0000;
+
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-orders{
+
+display:none;
+
+text-align:center;
+
+margin-top:80px;
+
+}
+
+.empty-orders h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:42px;
+
+color:#E8D7B0;
+
+margin-bottom:15px;
+
+}
+
+.empty-orders p{
+
+font-size:18px;
+
+color:#ddd;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+body{
+
+padding-top:90px;
+
+}
+
+.navbar{
+
+padding:15px;
+
+}
+
+.navbar h1{
+
+font-size:24px;
+
+}
+
+.orders-container{
+
+grid-template-columns:1fr;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
+
+.call-btn,
+.delete-btn{
+
+width:100%;
+
+}
+
+}

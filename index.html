@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Chef Dashboard</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar">
+
+<h1>
+
+CHEF DASHBOARD
+
+</h1>
+
+<div class="live-box">
+
+<span class="live-dot"></span>
+
+LIVE ORDERS
+
+</div>
+
+</header>
+
+<!-- ================= ORDER LIST ================= -->
+
+<main>
+
+<div
+id="ordersContainer"
+class="orders-container">
+
+<!-- Firebase Orders Here -->
+
+</div>
+
+</main>
+
+<!-- ================= EMPTY ================= -->
+
+<div
+id="emptyOrders"
+class="empty-orders">
+
+<h2>
+
+No Orders Available
+
+</h2>
+
+<p>
+
+Waiting for new customer orders...
+
+</p>
+
+</div>
+
+<!-- ================= FIREBASE ================= -->
+
+<script type="module"
+src="firebase.js"></script>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
