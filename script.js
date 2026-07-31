@@ -44,7 +44,7 @@ navigator.vibrate([300,200,300]);
 
 }
 
-alert("🔔 New Order Received");
+showNotification();
 
 }
 
@@ -226,6 +226,32 @@ document.addEventListener("DOMContentLoaded",()=>{
 loadOrders();
 
 });
+
+function showNotification(){
+
+const oldToast = document.getElementById("chefToast");
+
+if(oldToast){
+
+oldToast.remove();
+
+}
+
+const toast = document.createElement("div");
+
+toast.id = "chefToast";
+
+toast.innerHTML = "🔔 New Order Received";
+
+document.body.appendChild(toast);
+
+setTimeout(()=>{
+
+toast.remove();
+
+},3000);
+
+}
 
 /* ===========================================
    END OF FILE
