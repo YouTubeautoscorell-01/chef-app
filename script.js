@@ -30,27 +30,7 @@ fb.orderBy("createdAt","desc")
 );
 
 fb.onSnapshot(q,(snapshot)=>{
-const currentOrderCount = snapshot.size;
 
-if(!firstLoad && currentOrderCount > previousOrderCount){
-
-notificationSound.currentTime = 0;
-
-notificationSound.play().catch(()=>{});
-
-if(navigator.vibrate){
-
-navigator.vibrate([300,200,300]);
-
-}
-
-showNotification();
-
-}
-
-previousOrderCount = currentOrderCount;
-
-firstLoad = false;
 ordersContainer.innerHTML="";
 
 if(snapshot.empty){
@@ -226,32 +206,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 loadOrders();
 
 });
-
-function showNotification(){
-
-const oldToast = document.getElementById("chefToast");
-
-if(oldToast){
-
-oldToast.remove();
-
-}
-
-const toast = document.createElement("div");
-
-toast.id = "chefToast";
-
-toast.innerHTML = "🔔 New Order Received";
-
-document.body.appendChild(toast);
-
-setTimeout(()=>{
-
-toast.remove();
-
-},3000);
-
-}
 
 /* ===========================================
    END OF FILE
