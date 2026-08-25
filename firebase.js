@@ -1,77 +1,142 @@
-// ================= FIREBASE =================
+// ==========================================
+// CHEF APP - FIREBASE.JS
+// ==========================================
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+/* =========================
+   FIREBASE APP
+========================= */
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+/* =========================
+   FIRESTORE
+========================= */
 
 import {
 
-getFirestore,
+  getFirestore,
 
-collection,
+  collection,
 
-addDoc,
+  addDoc,
 
-getDocs,
+  getDocs,
 
-deleteDoc,
+  getDoc,
 
-doc,
+  setDoc,
 
-onSnapshot,
+  updateDoc,
 
-query,
+  deleteDoc,
 
-orderBy,
+  doc,
 
-serverTimestamp
+  onSnapshot,
+
+  query,
+
+  orderBy,
+
+  serverTimestamp
 
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// ================= CONFIG =================
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
 
 const firebaseConfig = {
 
-apiKey: "AIzaSyDi40oL-JtE9LXF8CPGFHHLL6Hqe4p_GDA",
+  apiKey:
+    "AIzaSyDi40oL-JtE9XF8CPGFHHLL6Hqe4p_GDA",
 
-authDomain: "restaurant-63230.firebaseapp.com",
+  authDomain:
+    "restaurant-63230.firebaseapp.com",
 
-projectId: "restaurant-63230",
+  projectId:
+    "restaurant-63230",
 
-storageBucket: "restaurant-63230.firebasestorage.app",
+  storageBucket:
+    "restaurant-63230.firebasestorage.app",
 
-messagingSenderId: "624519670365",
+  messagingSenderId:
+    "624519670365",
 
-appId: "1:624519670365:web:f23d10079a9adf2c51bbb4"
+  appId:
+    "1:624519670365:web:f23d10079a9adf2c51bbb4"
 
 };
 
-// ================= INITIALIZE =================
 
-const app = initializeApp(firebaseConfig);
+/* =========================
+   INITIALIZE FIREBASE
+========================= */
 
-const db = getFirestore(app);
+const app =
+  initializeApp(
+    firebaseConfig
+  );
 
-// ================= GLOBAL =================
 
-window.db = db;
+/* =========================
+   FIRESTORE DATABASE
+========================= */
+
+const db =
+  getFirestore(app);
+
+
+/* =========================
+   GLOBAL DATABASE
+========================= */
+
+window.db =
+  db;
+
+
+/* =========================
+   GLOBAL FIREBASE FUNCTIONS
+========================= */
 
 window.fb = {
 
-collection,
+  collection,
 
-addDoc,
+  addDoc,
 
-getDocs,
+  getDocs,
 
-deleteDoc,
+  getDoc,
 
-doc,
+  setDoc,
 
-onSnapshot,
+  updateDoc,
 
-query,
+  deleteDoc,
 
-orderBy,
+  doc,
 
-serverTimestamp
+  onSnapshot,
+
+  query,
+
+  orderBy,
+
+  serverTimestamp
 
 };
+
+
+/* =========================
+   CONNECTION CHECK
+========================= */
+
+console.log(
+  "Chef Firebase Connected Successfully"
+);
